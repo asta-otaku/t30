@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function DevotionalModal() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [contentState, setContentState] = useState<string | null>(null);
+  const [, setContentState] = useState<string | null>(null);
 
   const handleContentStateChange = (contentState: any) => {
     setContentState(draftToHtml(contentState));
