@@ -1,7 +1,7 @@
 import logo from "../../assets/logo.svg";
 import profile from "../../assets/profilem.svg";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useRef, useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 function Verify() {
@@ -12,6 +12,10 @@ function Verify() {
   const inputs = Array(4)
     .fill(0)
     .map(() => useRef<HTMLInputElement>(null));
+
+  useEffect(() => {
+    inputs[0].current?.focus();
+  }, []);
 
   const handleChange = (index: number, value: string) => {
     const newOTP = [...otp];
